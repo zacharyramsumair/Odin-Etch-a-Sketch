@@ -8,76 +8,108 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<main class="container">
 
-        <main>
-            <section class="grid">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </section>
+			<div class="pick-color">
+				<div class="color-picker"></div>
+				<div id="color-indicator" class="color-indicator"></div>
+				<div id="color-picker"></div>
+			</div>
 
-        </main>
+			<section class="controls">
+				<div>
+					<input
+						type="range"
+						id="grid-length"
+						name="grid-length "
+						class="grid-length"
+						min="1"
+						max="100"
+						value="8"
+						steps="1"
+					/>
+
+					<div class="range-input">
+						<span class="showValue show">8</span>
+					</div>
+
+					<label class="grid-length-label" for="grid-length">8 x 8</label>
+				</div>
+
+
+                <button class="colour">Colour</button>
+                <button class="rainbow">Rainbow</button>
+                <button class="eraser">Eraser</button>
+                <button class="clear">Clear</button>
+			</section>
+			<section class="grid">
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+				<div class="square"></div>
+			</section>
+		</main>
+		<script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 
 		<script src="./script.js"></script>
 	</body>
