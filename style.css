@@ -5,32 +5,57 @@
 }
 
 body {
+  background-color:#dfdad5;
+  font-family: 'Roboto Mono', monospace;
 }
+
+.title{
+  text-align: center;
+  padding: 1em;
+}
+
 
 .container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
-	min-height: 100vh;
+	min-height: 90vh;
 }
+
+
 
 .grid {
 	display: grid;
-    width: 40em;
-    height: 40em;
+
+  width: 30em;
+  height: 30em;
+
 	grid-template-columns: repeat(8, 1fr);
 	grid-template-rows: repeat(8, 1fr);
-	margin: 2em;
+	margin: 0em 3em;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+
+
 }
 
 .square {
 	border: 1px solid #000;
 }
 
+.removeBorder{
+  border: none;
+}
+
 .range-input {
 	position: relative;
     width: 100%;
+}
+
+.slider{
+  cursor: pointer;
 }
 
 .grid-length {
@@ -43,8 +68,13 @@ body {
 	border: none;
 }
 
+.grid-length-label{
+  text-align: center;
+}
+
 .color-picker{
   position: relative;
+  cursor: pointer;
 }
 
 .color-indicator{
@@ -54,12 +84,21 @@ body {
   background-color: #000;
   border-radius: 5px;
   vertical-align: middle;
+
 }
 
 #color-picker{
   display: inline-block;
   vertical-align: middle;
   margin: 2em;
+  cursor: pointer;
+
+}
+
+.pick-color{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -102,7 +141,49 @@ body {
     border-top-right-radius: 50%;
   }
 
+  .featureButtons{
+    display: flex;
+  }
+
+
+  .feature{
+    outline-color: transparent;
+    border: none;
+    padding: 1em 1em;
+    background-color: #7097ff;
+    border-radius: 10px;
+    margin: 0.5em;
+    cursor: pointer;
+  }
+
+  .feature:hover{
+    background-color: #597de0;
+
+  }
 
   .selected{
-    background-color: green;
+    background-color: #63ebff;
   }
+
+  .selected:hover{
+    background-color: #4bcee2;
+  }
+
+
+  @media screen and (max-width: 800px) {
+   
+   .container{
+    flex-direction: column;
+   }
+
+   .feature{
+    padding: 0.5em ;
+   }
+
+   .grid {
+    display: grid;
+    width: 20em;
+    height:  20em;
+  }
+
+}

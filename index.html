@@ -4,20 +4,25 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Etch a Sketch</title>
+		<title>Etch-a-Sketch</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<h1 class="title">Etch-a-Sketch</h1>
+
 		<main class="container">
 
-			<div class="pick-color">
-				<div class="color-picker"></div>
-				<div id="color-indicator" class="color-indicator"></div>
-				<div id="color-picker"></div>
-			</div>
-
 			<section class="controls">
-				<div>
+				<div class="pick-color">
+					<div class="color-picker"></div>
+					<div id="color-indicator" class="color-indicator"></div>
+					<div id="color-picker"></div>
+				</div>
+
+				<div class="slider">
 					<input
 						type="range"
 						id="grid-length"
@@ -35,13 +40,17 @@
 
 					<label class="grid-length-label" for="grid-length">8 x 8</label>
 				</div>
+				<div class="featureButtons">
+					<button class=" feature color selected">Color</button>
+					<button class=" feature rainbow">Rainbow</button>
+					<button class=" feature eraser">Eraser</button>
+					<button class=" feature border">Hide Borders</button>
+					<button class=" feature clear">Clear</button>
+				</div>
 
-
-                <button class="colour">Colour</button>
-                <button class="rainbow">Rainbow</button>
-                <button class="eraser">Eraser</button>
-                <button class="clear">Clear</button>
+				
 			</section>
+
 			<section class="grid">
 				<div class="square"></div>
 				<div class="square"></div>

@@ -3,13 +3,15 @@ let gridLengthControl = document.getElementById("grid-length");
 let gridLengthLabel = document.querySelector(".grid-length-label");
 let showValue = document.querySelector(".showValue");
 let grid = document.querySelector(".grid");
-let colour = document.querySelector(".colour");
+let color = document.querySelector(".color");
 let rainbow = document.querySelector(".rainbow");
 let eraser = document.querySelector(".eraser");
 let clear = document.querySelector(".clear");
+let border = document.querySelector(".border");
 
 let gridLength = 8;
-let state = "colour"
+let state = "color"
+let currentColor = "#000"
 
 // colour picker code start
 // https://www.youtube.com/watch?v=WWaUTYN5Oe0
@@ -18,7 +20,13 @@ const colorPicker = new iro. ColorPicker("#color-picker", {
 width:180, color: "#fff"
 });
 colorPicker.on("color:change", function(color){
-    colorIndicator.style.backgroundColor = color.hexString;
+    // colorIndicator.style.backgroundColor = color.hexString;
+    colorIndicator.style.backgroundColor = color.hslString;
+    
+    if( state == "color"){
+        currentColor = color.hslString;
+    }
+    // console.log(color.hslString)
 })
 
 
@@ -43,16 +51,16 @@ gridLengthControl.onchange = () => {
     for (let i = 0; i < gridLength * gridLength; i++) {
       const square = document.createElement('div')
       square.classList.add('square')
-      square.addEventListener('mouseover', changeColor)
-      square.addEventListener('mousedown', changeColor)
+    //   square.addEventListener('mouseover', changeColor)
+      square.addEventListener('mousedown', () => {changeColor(square)})
       grid.appendChild(square)
     }
    
 };
 
-colour.addEventListener(("click"),() =>{
-    state = "colour"
-    colour.classList.add("selected")
+color.addEventListener(("click"),() =>{
+    state = "color"
+    color.classList.add("selected")
     rainbow.classList.remove("selected")
     eraser.classList.remove("selected")
     // clear.classList.remove("selected")
@@ -61,21 +69,69 @@ colour.addEventListener(("click"),() =>{
 rainbow.addEventListener(("click"),() =>{
     state = "rainbow"
     rainbow.classList.add("selected")
-    colour.classList.remove("selected")
+    color.classList.remove("selected")
     eraser.classList.remove("selected")
     // clear.classList.remove("selected")
 })
 
 eraser.addEventListener(("click"),() =>{
     state = "eraser"
+    currentColor = "#fff"
     eraser.classList.add("selected")
     rainbow.classList.remove("selected")
-    colour.classList.remove("selected")
+    color.classList.remove("selected")
     // clear.classList.remove("selected")
+})
+
+clear.addEventListener('click' , () =>{
+    startUp()
+})
+
+border.addEventListener('click' , () =>{
+    let allSquares = document.getElementsByClassName("square")
+
+    for (let square of allSquares){
+        square.classList.toggle("removeBorder")
+    }
+
+    if(allSquares[0].classList.contains("removeBorder")){
+        border.textContent = "Show Borders"
+    } else{
+        border.textContent = "Hide Borders"
+
+    }
 })
 
 
 
-const changeColor =()=>{
-    console.log('n')
+const changeColor =(square)=>{
+
+    if(state == "rainbow"){
+        currentColor = `hsl(${Math.floor(Math.random() * (360 - 0 + 1) + 0)}, 100%, 50%)`
+
+    }
+    square.style.backgroundColor = currentColor;
+    
+    // console.log(square)
 }
+
+
+const startUp =()=>{
+    grid.style.gridTemplateColumns = `repeat(${gridLength}, 1fr)`
+    grid.style.gridTemplateRows = `repeat(${gridLength}, 1fr)`
+  
+    grid.innerHTML =""
+    for (let i = 0; i < gridLength * gridLength; i++) {
+      const square = document.createElement('div')
+      square.classList.add('square')
+    //   square.addEventListener('mouseover', changeColor)
+      square.addEventListener('mousedown', () => {changeColor(square)})
+      grid.appendChild(square)
+    }
+}
+
+
+startUp()
+
+
+
