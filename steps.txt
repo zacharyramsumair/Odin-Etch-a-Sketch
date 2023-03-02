@@ -1,0 +1,10 @@
+features to include 
+
+slider to set grid : 1- 100
+color mode with color picker
+rainbow mode with random colors
+lighten mode
+darken mode
+eraser
+clear
+show/hide borders
